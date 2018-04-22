@@ -1,6 +1,8 @@
 class Note < ApplicationRecord
   belongs_to :patient
   
+  
+  
 #  before_create :set_filename
 #  after_create :store_file
 #  after_destroy :delete_file

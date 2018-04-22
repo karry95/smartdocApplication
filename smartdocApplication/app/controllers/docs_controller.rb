@@ -5,6 +5,7 @@ class DocsController < ApplicationController
   # GET /docs.json
   def index
     @docs = Doc.all
+   # @appointment_created_count = Doc.appointment_count
   end
 
   # GET /docs/1
@@ -28,7 +29,7 @@ class DocsController < ApplicationController
 
     respond_to do |format|
       if @doc.save
-        format.html { redirect_to @doc, notice: 'Doc was successfully created.' }
+        format.html { redirect_to @doc, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @doc }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class DocsController < ApplicationController
   def update
     respond_to do |format|
       if @doc.update(doc_params)
-        format.html { redirect_to @doc, notice: 'Doc was successfully updated.' }
+        format.html { redirect_to @doc, notice: 'Appointment was successfully updated.' }
         format.json { render :show, status: :ok, location: @doc }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class DocsController < ApplicationController
   def destroy
     @doc.destroy
     respond_to do |format|
-      format.html { redirect_to docs_url, notice: 'Doc was successfully destroyed.' }
+      format.html { redirect_to docs_url, notice: 'Appointment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'homes/index'
+  
+  get '/check', :controller=>'patients', :action=>'checkalergy'
   resources :docs
   devise_for :users
   resources :users

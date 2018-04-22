@@ -1,6 +1,8 @@
 
 <div class="card">
   <div class="card-body">
+     <div class="col-sm">
+        <div class="card-header">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -37,4 +39,10 @@
 <%= link_to 'Back', patients_path %>
 <%= link_to'Show Notes', patient_notes_path(@patient) %>
 
+<p></p>See if patient is allergic</p>
+<%= form_tag "/validate" do %>
+<%= text_field_tag :search_string %>
+<%= submit_tag "Search" %>
+<% end %>
+</div></div>
 </div></div>

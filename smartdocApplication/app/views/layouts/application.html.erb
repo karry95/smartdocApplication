@@ -20,7 +20,7 @@
          
   <a class="navbar-brand" href="#nav" class="nav-collapse" id="nav-collapse">Menu</a>
 
-        <%= link_to "| Home |", root_path %>  
+        <%= link_to 'Home |', homes_index_path %> 
         <%= link_to "Patients |", patients_path %>  
         <%= link_to "Appointments |", docs_path %> 
            
@@ -40,7 +40,7 @@
   
 
     <%= yield %>
-    </div>
+    </div><br>
     <div align="center">
       <button type="button" class="btn btn-dark"> <%= render "devise/menu/registration_items" %> </button>
 <button  type="button" class="btn btn-dark> <%= render 'devise/menu/login_items' %> </button></div>

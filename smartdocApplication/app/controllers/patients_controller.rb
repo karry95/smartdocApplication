@@ -75,5 +75,9 @@ end
     def patient_params
       params.require(:patient).permit(:name, :contact, :date_of_birth, :address, :injury, :action)
     end
+     def isprime
+ @input1 = params[:search_string]
+ @result = Checkalergy.runcheck(@input1.to_i)
+ end
   end
 
