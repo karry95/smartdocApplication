@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="card">
+  <div class="card-body">
+<h1>Notes#index</h1>
+<p>Find me in app/views/notes/index.html.erb</p>
+
+
+<h1>Notes in <%= @patient.name %></h1>
+<table>
+<tr>
+<th>Notes details</th>
+</tr>
+<% for note in @notes %>
+<tr>
+<td><%= note.details %></td>
+<td><%= link_to 'Show', patient_note_path(@patient, note)
+%></td>
+<td><%= link_to 'Edit', edit_patient_note_path(@patient, note)
+%></td>
+<td><%= link_to 'Destroy', patient_note_path(@patient, note),
+:confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New note', new_patient_note_path(@patient) %>
+<%= link_to 'Back to Patient', @patient %>
+</div>
+</div>
+</div>

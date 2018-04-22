@@ -1,0 +1,31 @@
+   <div class="container">
+    <div class="card">
+  <div class="card-body">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @doc.patient %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @doc.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @doc.time %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @doc.details %>
+</p>
+
+<%= link_to 'Edit', edit_doc_path(@doc) %> |
+<%= link_to 'Back', docs_path %>
+</div>
+</div>
+</div>

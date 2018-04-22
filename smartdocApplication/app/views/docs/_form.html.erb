@@ -1,0 +1,37 @@
+<%= form_with(model: doc, local: true) do |form| %>
+  <% if doc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doc.errors.count, "error") %> prohibited this doc from being saved:</h2>
+
+      <ul>
+      <% doc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :patient %>
+    <%= form.text_field :patient, id: :doc_patient %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :doc_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.time_select :time, id: :doc_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details, id: :doc_details %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="container">
+<div class="card">
+  <div class="card-body">
+<h1>Notes show</h1>
+<p>Find me in app/views/notes/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+ <p> <strong>Name:</strong> <%= @patient.name %> </p>
+
+ <p> <strong>Contact details:</strong> <%= @patient.contact %></p>
+
+ <p> <strong>Date Of Birth:</strong> <%= @patient.date_of_birth %></p>
+
+ <p> <strong>Address:</strong> <%= @patient.address %> </p>
+
+ <p> <strong>Patient Injury:</strong> <%= @patient.injury %> </p>
+
+ <p> <strong>Doctors Action:</strong> <%= @patient.action %> </p>
+
+ <!-- Display the notes of a patient -->
+
+<h2>Notes</h2>
+<% @patient.notes.each do |note| %>
+<p>
+<b>Note details:</b>
+<%= note.details %>
+</p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %> |
+<%= link_to 'Show Notes', patient_notes_path(@patient) %>
+</div></div></div>

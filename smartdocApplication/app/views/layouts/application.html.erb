@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SmartdoctorApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> 
+<div class="container" >
+   
+    
+<nav class="navbar navbar-light" style="background-color: #7aacff;">
+     <div class="inner">
+        
+         
+  <a class="navbar-brand" href="#nav" class="nav-collapse" id="nav-collapse">Menu</a>
+
+        <%= link_to "| Home |", root_path %>  
+        <%= link_to "Patients |", patients_path %>  
+        <%= link_to "Appointments |", docs_path %> 
+           
+ 
+      </div>
+
+<div > <%= form_tag patients_path, :method => 'get' do %>
+     <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+     </p>
+     
+ <% end %></div>
+ 
+   
+  </nav>
+  
+
+    <%= yield %>
+    </div>
+    <div align="center">
+      <button type="button" class="btn btn-dark"> <%= render "devise/menu/registration_items" %> </button>
+<button  type="button" class="btn btn-dark> <%= render 'devise/menu/login_items' %> </button></div>
+  </body>
+</html>
